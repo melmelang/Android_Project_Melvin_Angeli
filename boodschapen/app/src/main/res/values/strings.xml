@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">boodschapen</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="Title">Titel</string>
+    <string name="Boodschap_Date">Datum</string>
+    <string name="Description">Beschrijving</string>
+    <string name="List">Boodschappenlijst</string>
+    <string name="OK">Save</string>
+    <string name="created_date">Aangemaakt datum</string>
+    <string name="date_to_do_boodschappen">Te doen voor de:</string>
+    <string name="detail_description">Beschrijving:</string>
+    <string name="detail_list">Boodschappenlijst:</string>
+    <string name="Return">Terug</string>
+    <string name="delete">Delete</string>
+    <string name="search_hint">Search hint</string>
+    <string name="day">Dag</string>
+    <string name="date_separation">/</string>
+    <string name="month">Maand</string>
+    <string name="year">Jaar</string>
+</resources>
