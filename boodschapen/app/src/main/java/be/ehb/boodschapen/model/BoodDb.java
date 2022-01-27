@@ -1,11 +1,8 @@
 package be.ehb.boodschapen.model;
 
 import android.content.Context;
-import android.database.sqlite.SQLiteDatabase;
 
 import androidx.room.Database;
-import androidx.room.Delete;
-import androidx.room.Query;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;

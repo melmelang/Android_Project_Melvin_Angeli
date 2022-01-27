@@ -13,7 +13,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
@@ -26,14 +25,13 @@ import be.ehb.boodschapen.model.util.DateConverter;
 
 public class CreateFragment extends Fragment {
 
-    private Button btnOk, btnReturn;
     private EditText etTitle, etdDay, etdMonth, etdYear, etmlDescription, etmlBlist;
     private Context mContext;
 
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
-        mContext = (FragmentActivity) context;
+        mContext = context;
     }
 
     @Override
@@ -51,8 +49,8 @@ public class CreateFragment extends Fragment {
 
         Bood bood = new Bood();
 
-        btnOk = view.findViewById(R.id.b_ok);
-        btnReturn = view.findViewById(R.id.btn_create_return);
+        Button btnOk = view.findViewById(R.id.b_ok);
+        Button btnReturn = view.findViewById(R.id.btn_create_return);
         etTitle = view.findViewById(R.id.et_title);
         etdDay = view.findViewById(R.id.etd_day);
         etdMonth = view.findViewById(R.id.etd_month);
@@ -71,7 +69,7 @@ public class CreateFragment extends Fragment {
                 bood.setMakeBoodschappenDate(DateConverter.stringToDate(etdYear.getText().toString() + "-"
                         + etdMonth.getText().toString() + "-"
                         + etdDay.getText().toString()));
-                BoodViewModel boodViewModel = new ViewModelProvider(getActivity()).get(BoodViewModel.class);
+                BoodViewModel boodViewModel = new ViewModelProvider(requireActivity()).get(BoodViewModel.class);
                 boodViewModel.insertBood(bood);
                 Toast.makeText(mContext, "succes", Toast.LENGTH_SHORT).show();
                 Navigation.findNavController(v).navigateUp();

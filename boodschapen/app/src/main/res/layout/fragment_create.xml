@@ -138,7 +138,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_title"
-        tools:ignore="SpeakableTextPresentCheck"
+        tools:ignore="LabelFor,SpeakableTextPresentCheck"
         android:importantForAutofill="no" />
 
     <EditText
@@ -154,7 +154,7 @@
         android:minHeight="48dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_day"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="LabelFor,SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/etd_month"
@@ -168,7 +168,7 @@
         android:minHeight="48dp"
         app:layout_constraintStart_toEndOf="@+id/tv_date5"
         app:layout_constraintTop_toBottomOf="@+id/tv_month"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="LabelFor,SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/etd_jear"
@@ -185,7 +185,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/tv_date6"
         app:layout_constraintTop_toBottomOf="@+id/tv_year"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="LabelFor,SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/etml_description"
@@ -203,7 +203,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_description"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="LabelFor,SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/etml_blist"
@@ -225,7 +225,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_blist"
         app:layout_constraintVertical_bias="0.0"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="LabelFor,SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/b_ok"

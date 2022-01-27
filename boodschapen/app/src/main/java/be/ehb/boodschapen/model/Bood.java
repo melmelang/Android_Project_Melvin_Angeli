@@ -1,10 +1,6 @@
 package be.ehb.boodschapen.model;
 
-import android.os.Build;
-
-import androidx.annotation.RequiresApi;
 import androidx.room.Entity;
-import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 import org.threeten.bp.LocalDate;
@@ -20,16 +16,6 @@ public class Bood implements Serializable {
     private LocalDate creatingDate;
 
     public Bood(){
-    }
-
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    @Ignore
-    public Bood(String title, String description, String content, LocalDate makeBoodschappenDate) {
-        this.title = title;
-        this.description = description;
-        this.content = content;
-        this.makeBoodschappenDate = makeBoodschappenDate;
-        this.creatingDate = LocalDate.now();
     }
 
     public long getId() {

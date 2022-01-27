@@ -12,7 +12,6 @@ import androidx.cardview.widget.CardView;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import be.ehb.boodschapen.R;
@@ -31,17 +30,14 @@ public class BoodAdaptor extends RecyclerView.Adapter<BoodAdaptor.BoodHolder> {
             TvCreateDate = itemView.findViewById(R.id.tv_CreateDate);
             TvBoodschappenDate = itemView.findViewById(R.id.tv_MakeBooschappenDate);
             card = itemView.findViewById(R.id.card_winkard);
-            card.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int position = getAdapterPosition();
-                    Bood boodToGive = data.get(position);
+            card.setOnClickListener(v -> {
+                int position = getAdapterPosition();
+                Bood boodToGive = data.get(position);
 
-                    Bundle dataToGive = new Bundle();
-                    dataToGive.putSerializable("boodschapItem", boodToGive);
+                Bundle dataToGive = new Bundle();
+                dataToGive.putSerializable("boodschapItem", boodToGive);
 
-                    Navigation.findNavController(itemView).navigate(R.id.action_homeFragment_to_detailFragment, dataToGive);
-                }
+                Navigation.findNavController(itemView).navigate(R.id.action_homeFragment_to_detailFragment, dataToGive);
             });
 
         }

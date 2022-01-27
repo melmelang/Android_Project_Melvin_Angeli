@@ -1,17 +1,7 @@
 package be.ehb.boodschapen.ui.fragments;
 
 import android.content.Context;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.Navigation;
-import androidx.room.Delete;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,34 +9,33 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
+
 import be.ehb.boodschapen.R;
 import be.ehb.boodschapen.model.Bood;
-import be.ehb.boodschapen.model.BoodDb;
 import be.ehb.boodschapen.model.BoodViewModel;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link DetailFragment#newInstance} factory method to
+ * Use the  factory method to
  * create an instance of this fragment.
  */
 public class DetailFragment extends Fragment {
 
-    private BoodDb mDb;
     private Context mContext;
 
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
-        mContext = (FragmentActivity) context;
+        mContext = context;
     }
 
     public DetailFragment() {
         // Required empty public constructor
-    }
-
-    public static DetailFragment newInstance() {
-        DetailFragment fragment = new DetailFragment();
-        return fragment;
     }
 
     @Override
@@ -86,7 +75,7 @@ public class DetailFragment extends Fragment {
             BTNReturn.setOnClickListener(v -> Navigation.findNavController(v).navigateUp());
 
             BTNDelete.setOnClickListener(v -> {
-                BoodViewModel boodViewModel = new ViewModelProvider(getActivity()).get(BoodViewModel.class);
+                BoodViewModel boodViewModel = new ViewModelProvider(requireActivity()).get(BoodViewModel.class);
                 boodViewModel.deleteBood(givenBood);
                 Toast.makeText(mContext, "succes", Toast.LENGTH_SHORT).show();
                 Navigation.findNavController(v).navigateUp();
